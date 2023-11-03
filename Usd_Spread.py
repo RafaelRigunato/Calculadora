@@ -5,8 +5,8 @@ import pandas as pd
 def cotadora():
     url = "http://economia.awesomeapi.com.br/json/last/USD-BRL"
     taxa_cal = requests.get(url).json()
-    ask_value = float(taxa_cal.get('USDBRL', {}).get('ask'))
-    return ask_value
+    bid_value = float(taxa_cal.get('USDBRL', {}).get('bid'))
+    return bid_value
 
 def calculate_spread():
     try:
